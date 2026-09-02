@@ -333,9 +333,10 @@ main, .site-footer { position: relative; z-index: 1; }
 /* Side panel that shows a company logo instead of the grid placeholder */
 .logo-panel { display: grid; place-items: center; padding: 1.5rem; }
 .logo-panel-dark { background: #0b0f14; }        /* fixed dark: the Novig wordmark is white */
-.logo { max-width: 100%; height: auto; }
-.logo-novig { width: 130px; }
-.logo-mag { width: 110px; border-radius: 22%; }
+/* Beat the generic ".project-thumb img" fill-and-crop rule: logos keep their own shape */
+.logo-panel img.logo { width: auto; height: auto; max-width: 100%; object-fit: contain; }
+.logo-panel img.logo-novig { width: 130px; }
+.logo-panel img.logo-mag { width: 110px; border-radius: 22%; }
 
 .project-body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
 .project-body p { color: var(--text-muted); font-size: 0.95rem; flex: 1; }
