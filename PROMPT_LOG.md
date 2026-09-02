@@ -155,4 +155,12 @@ manhattanathleticgroup.com into assets/, showed them in the side panel of each e
 panel stays dark since the wordmark is white), added "May 2026 – Aug 2026" to the MAG line, and
 credited both logos in the footer. Committed, pushed.
 
+**Me:** resize logos, same with Morgan Stanley add, for CMU add CMU or HCI lab logo, and find
+TRADERS @ CMU logo, it has a website as well as on LinkedIn
+
+**Claude:** Pulled the HCII logo from hcii.cmu.edu, the Morgan Stanley wordmark from
+morganstanley.com, and the Traders at CMU mark from tradersatcmu.com. All logos now fit the
+same 130x90 box; white logos sit on dark panels, the black Morgan Stanley wordmark on a white
+panel. Added tradersatcmu.com and LinkedIn links to that entry. Footer credit updated. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
