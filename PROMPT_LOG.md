@@ -113,4 +113,14 @@ with "Details coming soon" until Sai supplies bullets. Bio trimmed to facts. Com
 experience entries are now full-width rows with the thumbnail as a side panel; short items
 stay as cards. Verified desktop and mobile screenshots, committed, pushed.
 
+**Me:** for Novig I work on markets, operations, growth engineering side. Can we also have
+an option to "view resume" that opens it on top of the browser, not a download, but with a
+download option, kind of how on Arc you can preview a document?
+
+**Claude:** Changed the Novig role line to "Markets, Operations & Growth Engineering".
+Added a "View resume" button in the hero and a "Resume" nav link that open an overlay with
+the PDF in an iframe, plus Download and Open-in-tab buttons; Esc, the X, or clicking the
+backdrop closes it. The PDF only loads the first time it's opened. Copied the class-of-2029
+resume to assets/Sai_Chaudhry_Resume.pdf. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->

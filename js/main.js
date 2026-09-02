@@ -16,6 +16,7 @@
      5. Contact form validation
      6. Hero photo with monogram fallback
      7. Custom cursor: green dot + spotlight that lights the page grid
+     8. Resume overlay: previews the PDF on top of the page, with download
    ===================================================================== */
 
 "use strict";
@@ -238,6 +239,37 @@ function setupCursorGlow() {
 }
 
 
+/* ---------- 8. Resume overlay --------------------------------------- */
+function setupResumeModal() {
+  const modal = document.getElementById("resume-modal");
+  const frame = document.getElementById("resume-frame");
+  const openers = document.querySelectorAll("[data-open-resume]");
+  const closers = modal.querySelectorAll("[data-close-resume]");
+  let lastFocused = null;
+
+  function open(event) {
+    if (event) event.preventDefault();          // the nav link also works as a plain link if JS is off
+    lastFocused = document.activeElement;
+    if (!frame.src) frame.src = frame.dataset.src;   // load the PDF the first time only
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    modal.querySelector("[data-close-resume][aria-label]").focus();
+  }
+
+  function close() {
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+    if (lastFocused) lastFocused.focus();
+  }
+
+  openers.forEach((el) => el.addEventListener("click", open));
+  closers.forEach((el) => el.addEventListener("click", close));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !modal.hidden) close();
+  });
+}
+
+
 /* ---------- Boot ---------------------------------------------------- */
 // Run everything once the HTML is parsed (the script tag is at the end of
 // <body>, so the elements exist, but DOMContentLoaded is the safe habit).
@@ -249,5 +281,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupContactForm();
   setupHeroPhoto();
   setupCursorGlow();
+  setupResumeModal();
   document.getElementById("year").textContent = new Date().getFullYear();
 });

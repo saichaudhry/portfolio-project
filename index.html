@@ -53,6 +53,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="assets/Sai_Chaudhry_Resume.pdf" data-open-resume>Resume</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -94,6 +95,8 @@
         <div class="hero-cta">
           <a href="#projects" class="button button-primary">View projects</a>
           <a href="#contact" class="button button-ghost">Get in touch</a>
+          <!-- Opens the resume in an overlay (see #resume-modal and js/main.js) -->
+          <button type="button" class="button button-ghost" data-open-resume>View resume</button>
         </div>
       </div>
 
@@ -215,7 +218,7 @@
           </div>
           <div class="project-body">
             <h3>Novig — Prediction Market Exchange</h3>
-            <p class="project-meta mono">Quantitative Trading &amp; Market-Making Developer · New York, NY · May 2026 – Present</p>
+            <p class="project-meta mono">Markets, Operations &amp; Growth Engineering · New York, NY · May 2026 – Present</p>
             <ul class="bullets">
               <li>Contribute to the pricing, quoting, and market-making stack for a peer-to-peer prediction-market exchange that market-makes same-game parlays and prices customer RFQs (request-for-quote) in real time</li>
               <li>Built a first-principles same-game parlay pricing engine from scratch: a Gaussian-copula joint-probability model matching a paid vendor's correlation-adjusted prices to within ±1% across 1,000+ held-out games in four leagues (MLB, NBA, NHL, WNBA); generalized the 2-leg analytic form to an N-leg multivariate copula (nearest-PSD repair, Cholesky factorization, seeded Monte Carlo) and isolated a durable ∼3–4 point edge vs. soft-book lines through adversarial walk-forward backtests</li>
@@ -371,6 +374,28 @@
     </section>
 
   </main>
+
+  <!-- ============ RESUME OVERLAY ============ -->
+  <!-- A preview panel that sits on top of the page (like Arc's document preview).
+       The PDF renders inline in an <iframe>; Download and Open-in-tab are offered
+       as links. Opened/closed by js/main.js; Esc and clicking the backdrop close it. -->
+  <div id="resume-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close-resume></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="resume-title">
+      <header class="modal-header">
+        <h2 id="resume-title" class="mono">resume.pdf</h2>
+        <div class="modal-actions">
+          <a class="button button-ghost button-small" href="assets/Sai_Chaudhry_Resume.pdf" download="Sai_Chaudhry_Resume.pdf">Download</a>
+          <a class="button button-ghost button-small" href="assets/Sai_Chaudhry_Resume.pdf" target="_blank" rel="noopener">Open in tab ↗</a>
+          <button type="button" class="icon-button" data-close-resume aria-label="Close resume preview">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+      </header>
+      <!-- src is set by JS when opened, so the PDF isn't fetched until someone asks for it -->
+      <iframe id="resume-frame" class="modal-frame" title="Sai Chaudhry resume" data-src="assets/Sai_Chaudhry_Resume.pdf#view=FitH"></iframe>
+    </div>
+  </div>
 
   <!-- ============ FOOTER / CREDITS ============ -->
   <footer class="site-footer">
