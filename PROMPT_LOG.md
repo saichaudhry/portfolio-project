@@ -127,4 +127,10 @@ resume to assets/Sai_Chaudhry_Resume.pdf. Committed, pushed.
 
 **Claude:** Changed the Morgan Stanley role line and the mention in the bio. Committed, pushed.
 
+**Me:** Manhattan Athletic Group bullet points are the technical part of the Novig one
+
+**Claude:** Moved the four technical bullets (parlay pricing engine, cross-venue matching,
+external market-making framework, RFQ funnel) from the Novig entry to the MAG entry, verbatim.
+Novig keeps its first, general bullet. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
