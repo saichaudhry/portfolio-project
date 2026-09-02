@@ -123,4 +123,8 @@ the PDF in an iframe, plus Download and Open-in-tab buttons; Esc, the X, or clic
 backdrop closes it. The PDF only loads the first time it's opened. Copied the class-of-2029
 resume to assets/Sai_Chaudhry_Resume.pdf. Committed, pushed.
 
+**Me:** change Morgan Stanley to Applied Wealth Management Research
+
+**Claude:** Changed the Morgan Stanley role line and the mention in the bio. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
