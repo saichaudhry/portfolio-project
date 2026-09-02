@@ -114,17 +114,18 @@
       <div class="about-grid">
         <div class="about-bio reveal">
           <p>
-            I'm an undergraduate in Statistics &amp; Machine Learning at Carnegie Mellon University.
-            Outside of class I work as a GTM Engineer at Novig, a peer-to-peer sports
-            prediction market, where I build internal tools, data pipelines, and the
-            automation that helps the go-to-market team move faster.
+            I'm a Statistics &amp; Machine Learning major at Carnegie Mellon University,
+            class of 2029. I work at Novig, a peer-to-peer prediction-market exchange
+            in New York, on the pricing, quoting, and market-making side of the business.
           </p>
           <p>
-            My side projects live at the intersection of probability and software.
-            The biggest is MAG, a prediction-market trading operation I founded:
-            I built and run an automated market maker on Kalshi, which has taught me
-            more about measurement, honesty with data, and production systems than
-            any single course.
+            Before that I built trading systems for MAG, a market-making firm active on
+            prediction markets, did applied quantitative research at Morgan Stanley, and
+            spent a year as a machine-learning research intern in CMU's HCI Lab. I also
+            trade prediction markets with TRADERS @ CMU.
+          </p>
+          <p>
+            Off the screen: tennis, the NBA, politics, and street photography.
           </p>
         </div>
 
@@ -132,21 +133,35 @@
           <h3 class="mono">Skills</h3>
           <ul class="chip-list">
             <li class="chip">Python</li>
+            <li class="chip">PyTorch · NumPy · pandas</li>
+            <li class="chip">TypeScript · Node.js</li>
+            <li class="chip">Rust</li>
             <li class="chip">SQL</li>
-            <li class="chip">Statistics</li>
-            <li class="chip">Machine Learning</li>
-            <li class="chip">C / C0</li>
-            <li class="chip">HTML · CSS · JS</li>
-            <li class="chip">AWS</li>
+            <li class="chip">C / C++</li>
+            <li class="chip">React</li>
+            <li class="chip">REST · WebSockets</li>
+            <li class="chip">Docker · Linux · CI</li>
             <li class="chip">Git</li>
+          </ul>
+
+          <h3 class="mono">Quant &amp; modeling</h3>
+          <ul class="chip-list">
+            <li class="chip">Monte Carlo</li>
+            <li class="chip">Gaussian copulas</li>
+            <li class="chip">Bayesian inference</li>
+            <li class="chip">Time series</li>
+            <li class="chip">Walk-forward backtesting</li>
+            <li class="chip">Limit order books</li>
+            <li class="chip">Market making</li>
           </ul>
 
           <h3 class="mono">Interests</h3>
           <ul class="chip-list">
             <li class="chip chip-alt">Prediction markets</li>
-            <li class="chip chip-alt">Market microstructure</li>
-            <li class="chip chip-alt">Sports analytics</li>
-            <li class="chip chip-alt">Applied ML</li>
+            <li class="chip chip-alt">Tennis</li>
+            <li class="chip chip-alt">NBA</li>
+            <li class="chip chip-alt">Politics</li>
+            <li class="chip chip-alt">Street photography</li>
           </ul>
         </aside>
       </div>
@@ -162,6 +177,7 @@
         <button class="filter-button" data-filter="web" type="button">Web</button>
         <button class="filter-button" data-filter="trading" type="button">Trading</button>
         <button class="filter-button" data-filter="work" type="button">Work</button>
+        <button class="filter-button" data-filter="research" type="button">Research</button>
         <button class="filter-button" data-filter="15-113" type="button">15-113</button>
       </div>
 
@@ -189,28 +205,52 @@
           </div>
         </article>
 
-        <!-- Project 2: MAG (high level only: no P&L, sizes, or strategy parameters) -->
-        <article class="project-card reveal reveal-delay-1" data-tags="trading">
+        <!-- Work cards are written from my resume, kept high level: no P&L, sizes, or internal details. -->
+
+        <!-- Novig -->
+        <article class="project-card reveal reveal-delay-1" data-tags="work trading">
+          <div class="project-thumb">
+            <div class="thumb-placeholder mono">rfq → quote</div>
+          </div>
+          <div class="project-body">
+            <h3>Novig — Pricing &amp; Market Making</h3>
+            <p>
+              Work on the pricing, quoting, and market-making stack of a peer-to-peer
+              prediction-market exchange. Built a first-principles same-game parlay
+              pricing engine using a Gaussian-copula joint-probability model, generalized
+              from two legs to N legs, and validated it against a paid vendor with
+              walk-forward backtests. Worked on cross-venue market matching across Kalshi,
+              Novig, and Polymarket, on the framework that lets external market makers
+              stream two-sided liquidity into the exchange, and on restoring the live
+              parlay request-for-quote funnel.
+            </p>
+            <ul class="tag-list">
+              <li>TypeScript</li><li>Python</li><li>Monte Carlo</li><li>Microservices</li><li>WebSockets</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://novig.us" target="_blank" rel="noopener">novig.us ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- MAG -->
+        <article class="project-card reveal reveal-delay-2" data-tags="work trading">
           <div class="project-thumb">
             <div class="thumb-placeholder mono">bid · ask</div>
           </div>
           <div class="project-body">
-            <h3>MAG — Prediction-Market Trading</h3>
+            <h3>MAG — Trading Systems</h3>
             <p>
-              A small trading operation I founded and run on Kalshi sports markets.
-              It started as research on what separated consistently winning
-              prediction-market traders from the rest, and grew into a full system:
-              a recorder that streams order books from Kalshi and odds from ~30
-              sportsbooks, a de-vig model that turns them into a consensus fair
-              price, a passive market-making engine that rests post-only quotes
-              around fair with inventory and exposure limits, and a replay
-              backtester that re-runs every recorded day against real settlements
-              before any change goes live. Runs 24/7 on AWS with paper and shadow
-              modes, and a scorecard that measures closing-line value and post-fill
-              markouts so the P&amp;L can't lie to me.
+              Trading-systems work for MAG, a market-making firm active on prediction
+              markets. Built an automated market maker for Kalshi sports contracts: a
+              recorder for exchange order books and sportsbook odds, a de-vig model that
+              turns them into a consensus fair price, a passive quoting engine with
+              inventory and exposure limits, and a replay backtester that re-runs recorded
+              days against real settlements before changes go live. Deployed on AWS with
+              paper and shadow modes and a scorecard built around closing-line value.
             </p>
             <ul class="tag-list">
-              <li>Python</li><li>Statistics</li><li>AWS EC2</li><li>REST + WebSockets</li><li>SQLite</li>
+              <li>Python</li><li>AWS EC2</li><li>REST + WebSockets</li><li>SQLite</li><li>Statistics</li>
             </ul>
             <div class="project-links">
               <span class="muted">Code private</span>
@@ -218,24 +258,62 @@
           </div>
         </article>
 
-        <!-- Project 3: Novig work (high level only) -->
-        <article class="project-card reveal reveal-delay-2" data-tags="work">
+        <!-- TRADERS @ CMU -->
+        <article class="project-card reveal" data-tags="trading">
           <div class="project-thumb">
-            <div class="thumb-placeholder mono">novig</div>
+            <div class="thumb-placeholder mono">arb</div>
           </div>
           <div class="project-body">
-            <h3>GTM Engineering at Novig</h3>
+            <h3>TRADERS @ CMU — Prediction Markets Team</h3>
             <p>
-              Internal tooling and data work for the go-to-market team at a
-              peer-to-peer sports prediction market: analytics pipelines, dashboards,
-              and automation that turn raw platform data into decisions.
+              Engineered an automated arbitrage bot that takes cross-platform
+              prediction-market positions in real time, pricing outcomes ahead of line
+              movement across NFL playoff markets. Also used Bayesian updating with volume
+              signals to fade public bias on mispriced Kalshi political contracts.
             </p>
             <ul class="tag-list">
-              <li>Python</li><li>SQL</li><li>Data pipelines</li>
+              <li>Python</li><li>Bayesian inference</li><li>Kalshi</li><li>Polymarket</li>
             </ul>
-            <div class="project-links">
-              <a href="https://novig.us" target="_blank" rel="noopener">novig.us ↗</a>
-            </div>
+          </div>
+        </article>
+
+        <!-- CMU HCI Lab -->
+        <article class="project-card reveal reveal-delay-1" data-tags="research">
+          <div class="project-thumb">
+            <div class="thumb-placeholder mono">imu → state</div>
+          </div>
+          <div class="project-body">
+            <h3>CMU HCI Lab — ML Research Intern</h3>
+            <p>
+              Built a smartwatch sensing pipeline that streams all-day accelerometer and
+              gyroscope data to classify hyperactivity states in children with ADHD in real
+              time, roughly doubling calm-moment detection precision over the baseline.
+              Showed that personalized models beat a single global model, supporting a
+              human-in-the-loop design for behavioral sensing.
+            </p>
+            <ul class="tag-list">
+              <li>Python</li><li>PyTorch</li><li>Time series</li><li>Wearables</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Morgan Stanley -->
+        <article class="project-card reveal reveal-delay-2" data-tags="work research">
+          <div class="project-thumb">
+            <div class="thumb-placeholder mono">Σ risk</div>
+          </div>
+          <div class="project-body">
+            <h3>Morgan Stanley — Applied Quantitative Research</h3>
+            <p>
+              Summer on an analytics team: analyzed portfolio allocations, performance
+              trends, sector exposures, and risk metrics and turned them into client
+              presentations for senior advisors. Researched estate-planning and
+              wealth-transfer structures and ran valuation analysis on public companies to
+              inform investment recommendations.
+            </p>
+            <ul class="tag-list">
+              <li>Portfolio analytics</li><li>Valuation</li><li>Risk</li>
+            </ul>
           </div>
         </article>
 

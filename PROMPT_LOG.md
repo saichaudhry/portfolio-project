@@ -85,4 +85,14 @@ operation I founded, described at a high level (recorder, consensus fair model, 
 engine, replay backtester, AWS deployment, honest scorecard) with no P&L, sizes, or
 strategy parameters. Mentioned MAG by name in the About bio. Committed, pushed.
 
+**Me:** no that is wrong, look at my resume, it is not mine, that is the market maker I
+worked for.
+
+**Claude:** Corrected. Read the resumes in Documents (the July 2026 versions). Rewrote the
+About bio, skills, and work cards from them: MAG is now "Trading Systems" work for a
+market-making firm, not something I founded; Novig card reflects the parlay pricing engine,
+cross-venue matching, external market-maker framework, and RFQ funnel work; added TRADERS @
+CMU, CMU HCI Lab, and Morgan Stanley cards and a Research filter. Kept class of 2029 and no
+numbers. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
