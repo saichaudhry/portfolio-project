@@ -138,4 +138,8 @@ Novig keeps its first, general bullet. Committed, pushed.
 **Claude:** Removed the on-blur validation. Errors now appear only after the first Send
 click; after that a field re-checks as you type so the error clears once fixed. Committed, pushed.
 
+**Me:** change my "I like" to: I like sports, prediction markets, and sports prediction markets
+
+**Claude:** Changed the hero tagline. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
