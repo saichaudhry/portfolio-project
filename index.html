@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sai Chaudhry — Statistics & Machine Learning student at Carnegie Mellon and GTM Engineer at Novig. Portfolio of projects.">
+  <title>Sai Chaudhry</title>
+
+  <!--
+    AI USAGE NOTE (15-113 requirement):
+    The overall page skeleton below was drafted with Claude Code (Anthropic) from
+    my written spec: dark technical theme, sections for intro / about / projects /
+    contact, four JS features (theme toggle, scroll reveal, project filters,
+    contact-form validation). I chose the section order, the wording of every
+    piece of text, which projects to show, and the tag names. See PROMPT_LOG.md
+    at the repo root for the full conversation.
+  -->
+
+  <!-- Fonts: Inter (body) and JetBrains Mono (code accents), both from Google Fonts under the SIL Open Font License. Credited in the footer. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Applies the saved theme before the page paints so light-mode visitors don't see a dark flash. Kept tiny and inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", saved || (prefersLight ? "light" : "dark"));
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#top" class="nav-brand">
+        <span class="prompt">~/</span>sai
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme toggle: JS in js/main.js swaps data-theme on <html> and saves the choice -->
+        <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle dark or light mode">
+          <!-- sun icon (shown in dark mode) -->
+          <svg class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <!-- moon icon (shown in light mode) -->
+          <svg class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <!-- Hamburger for small screens -->
+        <button id="nav-toggle" class="icon-button nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO / INTRO ============ -->
+    <section class="hero container">
+      <div class="hero-text reveal">
+        <p class="eyebrow mono">// hello, world</p>
+        <h1>Sai Chaudhry</h1>
+        <p class="lede">
+          Statistics &amp; Machine Learning student at Carnegie Mellon.
+          GTM Engineer at <a href="https://novig.us" target="_blank" rel="noopener">Novig</a>.
+        </p>
+        <p class="hero-sub">
+          I like markets, models, and building the systems that connect them.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="button button-primary">View projects</a>
+          <a href="#contact" class="button button-ghost">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- Photo slot. Replace the placeholder <div> with:
+           <img src="assets/photo.jpg" alt="Photo of Sai Chaudhry" class="hero-photo">
+           when a photo is ready. -->
+      <div class="hero-photo-wrap reveal reveal-delay-1">
+        <div class="hero-photo placeholder" role="img" aria-label="Photo placeholder">
+          <span class="mono">SC</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section container">
+      <h2 class="section-title reveal"><span class="mono section-num">01.</span> About</h2>
+
+      <div class="about-grid">
+        <div class="about-bio reveal">
+          <p>
+            I'm an undergraduate in Statistics &amp; Machine Learning at Carnegie Mellon University.
+            Outside of class I work as a GTM Engineer at Novig, a peer-to-peer sports
+            prediction market, where I build internal tools, data pipelines, and the
+            automation that helps the go-to-market team move faster.
+          </p>
+          <p>
+            My side projects live at the intersection of probability and software:
+            I've built and operated an automated market-making bot for prediction
+            markets, which taught me more about measurement, honesty with data, and
+            production systems than any single course.
+          </p>
+          <p>
+            This site is my running portfolio for CMU's 15-113 (Effective Coding with AI)
+            and beyond. Each new project gets added here as the semester goes on.
+          </p>
+        </div>
+
+        <aside class="about-side reveal reveal-delay-1">
+          <h3 class="mono">Skills</h3>
+          <ul class="chip-list">
+            <li class="chip">Python</li>
+            <li class="chip">SQL</li>
+            <li class="chip">Statistics</li>
+            <li class="chip">Machine Learning</li>
+            <li class="chip">C / C0</li>
+            <li class="chip">HTML · CSS · JS</li>
+            <li class="chip">AWS</li>
+            <li class="chip">Git</li>
+          </ul>
+
+          <h3 class="mono">Interests</h3>
+          <ul class="chip-list">
+            <li class="chip chip-alt">Prediction markets</li>
+            <li class="chip chip-alt">Market microstructure</li>
+            <li class="chip chip-alt">Sports analytics</li>
+            <li class="chip chip-alt">Applied ML</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section container">
+      <h2 class="section-title reveal"><span class="mono section-num">02.</span> Projects</h2>
+
+      <!-- Filter buttons. data-filter matches the data-tags on each card. JS in js/main.js. -->
+      <div class="filters reveal" role="group" aria-label="Filter projects by tag">
+        <button class="filter-button is-active" data-filter="all" type="button">All</button>
+        <button class="filter-button" data-filter="web" type="button">Web</button>
+        <button class="filter-button" data-filter="trading" type="button">Trading</button>
+        <button class="filter-button" data-filter="work" type="button">Work</button>
+        <button class="filter-button" data-filter="15-113" type="button">15-113</button>
+      </div>
+
+      <div class="project-grid" id="project-grid">
+
+        <!-- Project 1: this site -->
+        <article class="project-card reveal" data-tags="web 15-113">
+          <div class="project-thumb">
+            <!-- Screenshot placeholder. Replace with <img src="assets/portfolio.png" alt="Screenshot of this portfolio site"> after deploying. -->
+            <div class="thumb-placeholder mono">index.html</div>
+          </div>
+          <div class="project-body">
+            <h3>Personal Portfolio Website</h3>
+            <p>
+              This site. Hand-written HTML, CSS, and vanilla JavaScript with a dark/light
+              theme, scroll-reveal animations, tag filtering, and a validated contact form.
+              Deployed on GitHub Pages. Built for 15-113 Project 1.
+            </p>
+            <ul class="tag-list">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/saichaudhry/saichaudhry.github.io" target="_blank" rel="noopener">Code ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: trading bot (high level only) -->
+        <article class="project-card reveal reveal-delay-1" data-tags="trading">
+          <div class="project-thumb">
+            <div class="thumb-placeholder mono">bid · ask</div>
+          </div>
+          <div class="project-body">
+            <h3>Prediction-Market Making Bot</h3>
+            <p>
+              An automated market maker for sports contracts on Kalshi. It aggregates
+              prices from multiple sportsbooks into a consensus fair value, rests
+              post-only quotes around it, and manages inventory and risk limits.
+              Runs 24/7 on AWS with paper-trading and shadow modes for testing changes
+              before they touch real money.
+            </p>
+            <ul class="tag-list">
+              <li>Python</li><li>AWS EC2</li><li>REST + WebSockets</li><li>Statistics</li>
+            </ul>
+            <div class="project-links">
+              <span class="muted">Code private</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: Novig work (high level only) -->
+        <article class="project-card reveal reveal-delay-2" data-tags="work">
+          <div class="project-thumb">
+            <div class="thumb-placeholder mono">novig</div>
+          </div>
+          <div class="project-body">
+            <h3>GTM Engineering at Novig</h3>
+            <p>
+              Internal tooling and data work for the go-to-market team at a
+              peer-to-peer sports prediction market: analytics pipelines, dashboards,
+              and automation that turn raw platform data into decisions.
+            </p>
+            <ul class="tag-list">
+              <li>Python</li><li>SQL</li><li>Data pipelines</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://novig.us" target="_blank" rel="noopener">novig.us ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholders for future 15-113 projects -->
+        <article class="project-card project-card-soon reveal" data-tags="15-113">
+          <div class="project-thumb">
+            <div class="thumb-placeholder mono">coming soon</div>
+          </div>
+          <div class="project-body">
+            <h3>15-113 Project 2</h3>
+            <p>Coming later this semester.</p>
+            <ul class="tag-list"><li>TBD</li></ul>
+          </div>
+        </article>
+
+        <article class="project-card project-card-soon reveal reveal-delay-1" data-tags="15-113">
+          <div class="project-thumb">
+            <div class="thumb-placeholder mono">coming soon</div>
+          </div>
+          <div class="project-body">
+            <h3>15-113 Project 3</h3>
+            <p>Coming later this semester.</p>
+            <ul class="tag-list"><li>TBD</li></ul>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="empty-state mono" id="empty-state" hidden>// no projects match that filter</p>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section container">
+      <h2 class="section-title reveal"><span class="mono section-num">03.</span> Contact</h2>
+
+      <div class="contact-grid">
+        <div class="contact-links reveal">
+          <p>The fastest way to reach me is email. I'm also on the usual places.</p>
+          <ul class="link-list">
+            <li>
+              <a href="mailto:saichaud@andrew.cmu.edu">
+                <span class="mono link-label">email</span> saichaud@andrew.cmu.edu
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/saichaudhry" target="_blank" rel="noopener">
+                <span class="mono link-label">github</span> saichaudhry
+              </a>
+            </li>
+            <!-- TODO(Sai): replace YOUR-LINKEDIN and YOUR-HANDLE below -->
+            <li>
+              <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">
+                <span class="mono link-label">linkedin</span> /in/YOUR-LINKEDIN
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/YOUR-HANDLE" target="_blank" rel="noopener">
+                <span class="mono link-label">x</span> @YOUR-HANDLE
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact form: validated in js/main.js. There is no server behind a static
+             GitHub Pages site, so on success we open the visitor's mail client with
+             the message pre-filled (mailto:). -->
+        <form id="contact-form" class="contact-form reveal reveal-delay-1" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="field-error" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="field-error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <p class="field-error" data-error-for="message"></p>
+          </div>
+          <button type="submit" class="button button-primary">Send message</button>
+          <p class="form-status mono" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER / CREDITS ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Sai Chaudhry. Built by hand with HTML, CSS, and JavaScript.</p>
+      <p class="credits">
+        Credits: fonts <a href="https://rsms.me/inter/" target="_blank" rel="noopener">Inter</a> and
+        <a href="https://www.jetbrains.com/lp/mono/" target="_blank" rel="noopener">JetBrains Mono</a>
+        via Google Fonts (SIL OFL). Icons are hand-drawn inline SVG.
+        Code drafted with the help of Claude Code (Anthropic) and revised by me;
+        see the <a href="https://github.com/saichaudhry/saichaudhry.github.io/blob/main/PROMPT_LOG.md" target="_blank" rel="noopener">prompt log</a>.
+        <a href="https://github.com/saichaudhry/saichaudhry.github.io" target="_blank" rel="noopener">Source on GitHub</a>.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
