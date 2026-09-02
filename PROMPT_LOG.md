@@ -47,4 +47,17 @@ AI USAGE NOTE comment at the top.)*
 
 ---
 
+**Claude:** *(Rendered desktop, mobile, and light-mode screenshots with headless Chrome
+to check the layout; all three looked right. Committed the site locally. Asked me to
+create the GitHub repo, and asked for my LinkedIn/X handles and whether to review the copy.)*
+
+**Me:** Created https://github.com/saichaudhry/portfolio-project. LinkedIn is
+linkedin.com/in/saichaudhry, ignore X. Access my resume on the Desktop (most recent one)
+but keep me as class of '29. Added a photo to the Desktop.
+
+**Claude:** The repo name changed to portfolio-project, so the live URL will be
+https://saichaudhry.github.io/portfolio-project/. Retargeted the remote and links,
+wired in LinkedIn, removed X. macOS blocked terminal access to the Desktop, so I asked
+Sai to copy the resume and photo into the project folder.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->

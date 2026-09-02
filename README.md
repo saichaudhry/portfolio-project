@@ -1,6 +1,6 @@
-# saichaudhry.github.io
+# portfolio-project
 
-Personal portfolio site for Sai Chaudhry. Live at **https://saichaudhry.github.io**.
+Personal portfolio site for Sai Chaudhry. Live at **https://saichaudhry.github.io/portfolio-project/**.
 
 Built for CMU 15-113 (Effective Coding with AI), Project 1, and maintained as a
 running showcase of coursework and side projects through the semester.
@@ -28,7 +28,7 @@ python3 -m http.server 8000
 
 ## Deploy
 
-Push to `main`. GitHub Pages serves the repo root at https://saichaudhry.github.io
+Push to `main`. GitHub Pages serves the repo root at https://saichaudhry.github.io/portfolio-project/
 (Settings → Pages → Source: Deploy from a branch → `main` / root).
 
 ## AI usage
