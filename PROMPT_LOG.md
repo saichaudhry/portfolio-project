@@ -142,4 +142,9 @@ click; after that a field re-checks as you type so the error clears once fixed. 
 
 **Claude:** Changed the hero tagline. Committed, pushed.
 
+**Me:** for Novig just have it say ongoing work on engineering, markets, operations, and analytics side
+
+**Claude:** Novig entry now has that single line as its bullet, with location and dates
+underneath the title. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
