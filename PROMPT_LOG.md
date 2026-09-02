@@ -133,4 +133,9 @@ resume to assets/Sai_Chaudhry_Resume.pdf. Committed, pushed.
 external market-making framework, RFQ funnel) from the Novig entry to the MAG entry, verbatim.
 Novig keeps its first, general bullet. Committed, pushed.
 
+**Me:** don't show "this field is required" unless I press Send message and didn't fill it out
+
+**Claude:** Removed the on-blur validation. Errors now appear only after the first Send
+click; after that a field re-checks as you type so the error clears once fixed. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->

@@ -150,18 +150,18 @@ function setupContactForm() {
     field.classList.toggle("has-error", message !== "");
   }
 
-  // Validate as the visitor leaves each field, so feedback is immediate.
+  // Errors only appear after the first "Send message" click. After that, a
+  // field re-validates as the visitor types so the message clears once fixed.
+  let submitted = false;
   form.querySelectorAll("input, textarea").forEach((input) => {
-    input.addEventListener("blur", () => showError(input, validateField(input)));
     input.addEventListener("input", () => {
-      if (input.closest(".field").classList.contains("has-error")) {
-        showError(input, validateField(input));
-      }
+      if (submitted) showError(input, validateField(input));
     });
   });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();                 // stop the browser's default submit
+    submitted = true;
     status.textContent = "";
     status.classList.remove("is-error");
 
