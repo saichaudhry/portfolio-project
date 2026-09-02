@@ -147,4 +147,12 @@ click; after that a field re-checks as you type so the error clears once fixed. 
 **Claude:** Novig entry now has that single line as its bullet, with location and dates
 underneath the title. Committed, pushed.
 
+**Me:** add MAG and Novig logo to their site, pull from internet ... for MAG do dates of
+May – August this year
+
+**Claude:** Pulled the Novig wordmark SVG from novig.us and the MAG icon from
+manhattanathleticgroup.com into assets/, showed them in the side panel of each entry (Novig's
+panel stays dark since the wordmark is white), added "May 2026 – Aug 2026" to the MAG line, and
+credited both logos in the footer. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
