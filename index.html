@@ -120,10 +120,11 @@
             automation that helps the go-to-market team move faster.
           </p>
           <p>
-            My side projects live at the intersection of probability and software:
-            I've built and operated an automated market-making bot for prediction
-            markets, which taught me more about measurement, honesty with data, and
-            production systems than any single course.
+            My side projects live at the intersection of probability and software.
+            The biggest is MAG, a prediction-market trading operation I founded:
+            I built and run an automated market maker on Kalshi, which has taught me
+            more about measurement, honesty with data, and production systems than
+            any single course.
           </p>
         </div>
 
@@ -188,22 +189,28 @@
           </div>
         </article>
 
-        <!-- Project 2: trading bot (high level only) -->
+        <!-- Project 2: MAG (high level only: no P&L, sizes, or strategy parameters) -->
         <article class="project-card reveal reveal-delay-1" data-tags="trading">
           <div class="project-thumb">
             <div class="thumb-placeholder mono">bid · ask</div>
           </div>
           <div class="project-body">
-            <h3>Prediction-Market Making Bot</h3>
+            <h3>MAG — Prediction-Market Trading</h3>
             <p>
-              An automated market maker for sports contracts on Kalshi. It aggregates
-              prices from multiple sportsbooks into a consensus fair value, rests
-              post-only quotes around it, and manages inventory and risk limits.
-              Runs 24/7 on AWS with paper-trading and shadow modes for testing changes
-              before they touch real money.
+              A small trading operation I founded and run on Kalshi sports markets.
+              It started as research on what separated consistently winning
+              prediction-market traders from the rest, and grew into a full system:
+              a recorder that streams order books from Kalshi and odds from ~30
+              sportsbooks, a de-vig model that turns them into a consensus fair
+              price, a passive market-making engine that rests post-only quotes
+              around fair with inventory and exposure limits, and a replay
+              backtester that re-runs every recorded day against real settlements
+              before any change goes live. Runs 24/7 on AWS with paper and shadow
+              modes, and a scorecard that measures closing-line value and post-fill
+              markouts so the P&amp;L can't lie to me.
             </p>
             <ul class="tag-list">
-              <li>Python</li><li>AWS EC2</li><li>REST + WebSockets</li><li>Statistics</li>
+              <li>Python</li><li>Statistics</li><li>AWS EC2</li><li>REST + WebSockets</li><li>SQLite</li>
             </ul>
             <div class="project-links">
               <span class="muted">Code private</span>

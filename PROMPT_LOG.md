@@ -78,4 +78,11 @@ Touch devices are unaffected. Verified with a screenshot, committed, pushed.
 assets/photo.jpg, and biased the square crop toward the face. Verified the hero
 with a screenshot, committed, pushed.
 
+**Me:** add mag work
+
+**Claude:** Expanded the trading-bot card into "MAG — Prediction-Market Trading": the
+operation I founded, described at a high level (recorder, consensus fair model, maker
+engine, replay backtester, AWS deployment, honest scorecard) with no P&L, sizes, or
+strategy parameters. Mentioned MAG by name in the About bio. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
