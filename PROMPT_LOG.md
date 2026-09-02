@@ -95,4 +95,10 @@ cross-venue matching, external market-maker framework, and RFQ funnel work; adde
 CMU, CMU HCI Lab, and Morgan Stanley cards and a Research filter. Kept class of 2029 and no
 numbers. Committed, pushed.
 
+**Me:** https://manhattanathleticgroup.com/ ... add mag website
+
+**Claude:** MAG is Manhattan Athletic Group. Fetched their site (they describe themselves as
+market making, proprietary trading, and research). Renamed the card, linked the site from the
+card and from the bio. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
