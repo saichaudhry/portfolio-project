@@ -295,7 +295,13 @@ main, .site-footer { position: relative; z-index: 1; }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  align-items: start;      /* cards keep their own height instead of stretching to the tallest in the row */
 }
+
+/* Experience entries span the full row, thumbnail becomes a side panel */
+.project-card.project-card-wide { grid-column: 1 / -1; flex-direction: row; }
+.project-card.project-card-wide .project-thumb { flex: 0 0 200px; aspect-ratio: auto; }
+.project-card.project-card-wide .project-body { padding: 1.5rem 1.75rem; }
 
 .project-card {
   display: flex;
@@ -538,5 +544,7 @@ main, .site-footer { position: relative; z-index: 1; }
   }
 
   .project-grid { grid-template-columns: 1fr; }
+  .project-card.project-card-wide { flex-direction: column; }
+  .project-card.project-card-wide .project-thumb { flex: none; aspect-ratio: 16 / 5; }
   .hero-cta .button { width: 100%; text-align: center; }
 }

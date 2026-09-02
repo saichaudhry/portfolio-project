@@ -109,4 +109,8 @@ isn't me building this, it's from my internship. *(quoted the MAG card text)*
 invented MAG description; that card now shows only the firm's own self-description and link
 with "Details coming soon" until Sai supplies bullets. Bio trimmed to facts. Committed, pushed.
 
+**Claude (follow-up):** The five-bullet Novig card stretched its whole grid row, so
+experience entries are now full-width rows with the thumbnail as a side panel; short items
+stay as cards. Verified desktop and mobile screenshots, committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
