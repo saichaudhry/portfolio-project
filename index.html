@@ -36,6 +36,12 @@
 </head>
 <body>
 
+  <!-- Custom cursor: a green dot plus a spotlight that lights up the page grid
+       around the pointer. Positioned by --mx/--my, which js/main.js updates on
+       mousemove. Hidden on touch devices (see css). -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
   <!-- ============ NAVIGATION ============ -->
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
@@ -91,11 +97,11 @@
         </div>
       </div>
 
-      <!-- Photo slot. Replace the placeholder <div> with:
-           <img src="assets/photo.jpg" alt="Photo of Sai Chaudhry" class="hero-photo">
-           when a photo is ready. -->
+      <!-- Photo. main.js tries assets/photo.jpg, then assets/photo.png; if neither
+           exists yet it shows the monogram placeholder instead. -->
       <div class="hero-photo-wrap reveal reveal-delay-1">
-        <div class="hero-photo placeholder" role="img" aria-label="Photo placeholder">
+        <img id="hero-photo" src="assets/photo.jpg" alt="Photo of Sai Chaudhry" class="hero-photo" hidden>
+        <div id="hero-photo-fallback" class="hero-photo placeholder" role="img" aria-label="Photo placeholder">
           <span class="mono">SC</span>
         </div>
       </div>
@@ -118,10 +124,6 @@
             I've built and operated an automated market-making bot for prediction
             markets, which taught me more about measurement, honesty with data, and
             production systems than any single course.
-          </p>
-          <p>
-            This site is my running portfolio for CMU's 15-113 (Effective Coding with AI)
-            and beyond. Each new project gets added here as the semester goes on.
           </p>
         </div>
 

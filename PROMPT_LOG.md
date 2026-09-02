@@ -60,4 +60,16 @@ https://saichaudhry.github.io/portfolio-project/. Retargeted the remote and link
 wired in LinkedIn, removed X. macOS blocked terminal access to the Desktop, so I asked
 Sai to copy the resume and photo into the project folder.
 
+**Me:** photo not working, remove the "this is my 15-113 site" paragraph, also can we do
+something cool with my mouse: instead of the mouse, can it be the same green shade but it
+lights up where the mouse is on the whole page?
+
+**Claude:** Three changes. The assets folder is still empty, so the photo file never landed;
+I made the hero try assets/photo.jpg then assets/photo.png and fall back to the monogram if
+neither exists. Removed the 15-113 paragraph from About. Added a custom cursor: a green dot
+replaces the OS cursor on mouse devices, and a spotlight lights up the page grid in the
+accent color around the pointer. Implemented with two fixed layers positioned by CSS
+variables (--mx, --my) that a mousemove listener updates; masked with a radial gradient.
+Touch devices are unaffected. Verified with a screenshot, committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->

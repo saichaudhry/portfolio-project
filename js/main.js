@@ -14,6 +14,8 @@
      3. Scroll-reveal animations via IntersectionObserver
      4. Project filtering by tag
      5. Contact form validation
+     6. Hero photo with monogram fallback
+     7. Custom cursor: green dot + spotlight that lights the page grid
    ===================================================================== */
 
 "use strict";
@@ -193,6 +195,49 @@ function setupContactForm() {
 }
 
 
+/* ---------- 6. Hero photo with fallback ----------------------------- */
+function setupHeroPhoto() {
+  const img = document.getElementById("hero-photo");
+  const fallback = document.getElementById("hero-photo-fallback");
+  const candidates = ["assets/photo.jpg", "assets/photo.png"];
+  let i = 0;
+
+  img.addEventListener("load", () => {
+    img.hidden = false;        // real photo exists: show it, hide the monogram
+    fallback.hidden = true;
+  });
+  img.addEventListener("error", () => {
+    i += 1;
+    if (i < candidates.length) {
+      img.src = candidates[i];  // try the next file name
+    }
+    // out of candidates: leave the monogram placeholder showing
+  });
+  img.src = candidates[0];
+}
+
+
+/* ---------- 7. Custom cursor glow ----------------------------------- */
+function setupCursorGlow() {
+  // Only for devices with a real mouse; touch screens keep the default.
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+
+  const root = document.documentElement;
+  const body = document.body;
+
+  // On every mouse move, store the pointer position in two CSS variables.
+  // The CSS for .cursor-glow and .cursor-dot reads them; no other JS needed.
+  window.addEventListener("mousemove", (event) => {
+    root.style.setProperty("--mx", event.clientX + "px");
+    root.style.setProperty("--my", event.clientY + "px");
+    body.classList.add("has-cursor");
+  });
+
+  // Hide the custom cursor when the mouse leaves the window
+  document.addEventListener("mouseleave", () => body.classList.remove("has-cursor"));
+}
+
+
 /* ---------- Boot ---------------------------------------------------- */
 // Run everything once the HTML is parsed (the script tag is at the end of
 // <body>, so the elements exist, but DOMContentLoaded is the safe habit).
@@ -202,5 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollReveal();
   setupProjectFilter();
   setupContactForm();
+  setupHeroPhoto();
+  setupCursorGlow();
   document.getElementById("year").textContent = new Date().getFullYear();
 });

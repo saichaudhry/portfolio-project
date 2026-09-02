@@ -91,6 +91,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mono  { font-family: var(--font-mono); }
 .muted { color: var(--text-muted); }
 
+/* The hidden attribute must always win, even over display rules below */
+[hidden] { display: none !important; }
+
 /* Visible keyboard focus for accessibility */
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
@@ -102,6 +105,9 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 
 .section { padding: 5rem 0; }
+
+/* Page content sits above the cursor-glow layer (z-index 0) */
+main, .site-footer { position: relative; z-index: 1; }
 
 .section-title {
   display: flex;
@@ -398,6 +404,63 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .footer-inner p { margin-bottom: 0.5rem; }
 .credits { max-width: 70ch; }
+
+
+/* ---------- 4g. Custom cursor ---------------------------------------- */
+/* Two fixed layers follow the pointer via --mx / --my (set in main.js):
+     .cursor-glow  a copy of the page grid drawn in the accent color, masked
+                   to a soft circle around the pointer, so the grid "lights up"
+     .cursor-dot   the small glowing dot that replaces the OS cursor
+   Both are pointer-events: none so they never block clicks. Everything here
+   is only active on devices with a mouse (pointer: fine) and after the first
+   mousemove (body.has-cursor), so touch users get the normal experience. */
+:root { --mx: -1000px; --my: -1000px; }   /* park offscreen until the mouse moves */
+
+.cursor-glow, .cursor-dot { display: none; }
+
+@media (pointer: fine) {
+  body.has-cursor, body.has-cursor a, body.has-cursor button,
+  body.has-cursor input, body.has-cursor textarea { cursor: none; }
+
+  body.has-cursor .cursor-glow {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle 220px at var(--mx) var(--my),
+        color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%),
+      linear-gradient(color-mix(in srgb, var(--accent) 55%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--accent) 55%, transparent) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+    /* The mask is what limits the lit grid to a circle around the pointer */
+    -webkit-mask-image: radial-gradient(circle 260px at var(--mx) var(--my), #000 0%, transparent 100%);
+            mask-image: radial-gradient(circle 260px at var(--mx) var(--my), #000 0%, transparent 100%);
+  }
+
+  body.has-cursor .cursor-dot {
+    display: block;
+    position: fixed;
+    left: var(--mx);
+    top: var(--my);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent), 0 0 30px color-mix(in srgb, var(--accent) 60%, transparent);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.15s ease, height 0.15s ease, opacity 0.15s ease;
+  }
+  /* Grow the dot when hovering anything clickable */
+  body.has-cursor:has(a:hover, button:hover, input:hover, textarea:hover) .cursor-dot {
+    width: 22px;
+    height: 22px;
+    opacity: 0.85;
+  }
+}
 
 
 /* ---------- 5. Scroll reveal ---------------------------------------- */
