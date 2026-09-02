@@ -101,4 +101,12 @@ numbers. Committed, pushed.
 market making, proprietary trading, and research). Renamed the card, linked the site from the
 card and from the bio. Committed, pushed.
 
+**Me:** just use same bullet points from resume, don't like this, it is also wrong: this
+isn't me building this, it's from my internship. *(quoted the MAG card text)*
+
+**Claude:** Replaced every card's paragraph with the resume bullets copied verbatim
+(including the numbers), with a role/location/dates line under each title. Removed the
+invented MAG description; that card now shows only the firm's own self-description and link
+with "Details coming soon" until Sai supplies bullets. Bio trimmed to facts. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->

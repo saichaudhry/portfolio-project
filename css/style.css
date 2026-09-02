@@ -327,6 +327,26 @@ main, .site-footer { position: relative; z-index: 1; }
 .project-body { padding: 1.25rem; display: flex; flex-direction: column; flex: 1; }
 .project-body p { color: var(--text-muted); font-size: 0.95rem; flex: 1; }
 
+/* Role / location / dates line under a card title */
+.project-meta {
+  flex: 0;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+/* Resume-style bullet list inside a card */
+.bullets {
+  list-style: disc;
+  padding-left: 1.1rem;
+  margin: 0 0 1rem;
+  flex: 1;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.bullets li { margin-bottom: 0.5rem; }
+.bullets li::marker { color: var(--accent); }
+
 .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
 .tag-list li {
   font-family: var(--font-mono);

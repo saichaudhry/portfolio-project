@@ -116,14 +116,14 @@
           <p>
             I'm a Statistics &amp; Machine Learning major at Carnegie Mellon University,
             class of 2029. I work at Novig, a peer-to-peer prediction-market exchange
-            in New York, on the pricing, quoting, and market-making side of the business.
+            in New York, and I've worked with
+            <a href="https://manhattanathleticgroup.com/" target="_blank" rel="noopener">Manhattan Athletic Group</a>
+            (MAG), a market-making and proprietary-trading firm.
           </p>
           <p>
-            Before that I built trading systems for
-            <a href="https://manhattanathleticgroup.com/" target="_blank" rel="noopener">Manhattan Athletic Group</a>
-            (MAG), a market-making and proprietary-trading firm active on prediction markets, did applied quantitative research at Morgan Stanley, and
-            spent a year as a machine-learning research intern in CMU's HCI Lab. I also
-            trade prediction markets with TRADERS @ CMU.
+            Previously: applied quantitative research at Morgan Stanley and a year as a
+            machine-learning research intern in CMU's HCI Lab. I trade prediction markets
+            with TRADERS @ CMU.
           </p>
           <p>
             Off the screen: tennis, the NBA, politics, and street photography.
@@ -206,7 +206,7 @@
           </div>
         </article>
 
-        <!-- Work cards are written from my resume, kept high level: no P&L, sizes, or internal details. -->
+        <!-- Experience cards. Bullet text is copied verbatim from my resume (July 2026). -->
 
         <!-- Novig -->
         <article class="project-card reveal reveal-delay-1" data-tags="work trading">
@@ -214,19 +214,14 @@
             <div class="thumb-placeholder mono">rfq → quote</div>
           </div>
           <div class="project-body">
-            <h3>Novig — Pricing &amp; Market Making</h3>
-            <p>
-              Work on the pricing, quoting, and market-making stack of a peer-to-peer
-              prediction-market exchange. Built a first-principles same-game parlay
-              pricing engine using a Gaussian-copula joint-probability model, generalized
-              from two legs to N legs, and validated it against a paid vendor with
-              walk-forward backtests. Worked on cross-venue market matching across Kalshi,
-              Novig, and Polymarket, on the framework that lets external market makers
-              stream two-sided liquidity into the exchange, and on restoring the live
-              parlay request-for-quote funnel.
-            </p>
-            <ul class="tag-list">
-              <li>TypeScript</li><li>Python</li><li>Monte Carlo</li><li>Microservices</li><li>WebSockets</li>
+            <h3>Novig — Prediction Market Exchange</h3>
+            <p class="project-meta mono">Quantitative Trading &amp; Market-Making Developer · New York, NY · May 2026 – Present</p>
+            <ul class="bullets">
+              <li>Contribute to the pricing, quoting, and market-making stack for a peer-to-peer prediction-market exchange that market-makes same-game parlays and prices customer RFQs (request-for-quote) in real time</li>
+              <li>Built a first-principles same-game parlay pricing engine from scratch: a Gaussian-copula joint-probability model matching a paid vendor's correlation-adjusted prices to within ±1% across 1,000+ held-out games in four leagues (MLB, NBA, NHL, WNBA); generalized the 2-leg analytic form to an N-leg multivariate copula (nearest-PSD repair, Cholesky factorization, seeded Monte Carlo) and isolated a durable ∼3–4 point edge vs. soft-book lines through adversarial walk-forward backtests</li>
+              <li>Worked on cross-venue matching across Kalshi, Novig, and Polymarket — mapping and reconciling equivalent markets between systems so the market-making engine can source and hedge liquidity across books</li>
+              <li>Assisted on the external market-making framework that lets a professional market-making firm stream two-sided liquidity into the exchange, contributing to the batch-quoting and mass-cancel (by event/market/outcome) paths over real-time order-book and tick market-data feeds</li>
+              <li>Helped restore the live parlay RFQ quoting funnel and validated a per-leg multi-book fill on a 472-quote sample, recovering ∼50% of previously dropped quote volume while holding ∼96% seller-safety</li>
             </ul>
             <div class="project-links">
               <a href="https://novig.us" target="_blank" rel="noopener">novig.us ↗</a>
@@ -234,28 +229,19 @@
           </div>
         </article>
 
-        <!-- MAG -->
+        <!-- MAG. TODO(Sai): add bullets. Nothing on the resume covers this yet. -->
         <article class="project-card reveal reveal-delay-2" data-tags="work trading">
           <div class="project-thumb">
             <div class="thumb-placeholder mono">bid · ask</div>
           </div>
           <div class="project-body">
-            <h3>Manhattan Athletic Group — Trading Systems</h3>
-            <p>
-              Trading-systems work for MAG, a market-making, proprietary-trading, and
-              research firm active on prediction markets. Built an automated market maker for Kalshi sports contracts: a
-              recorder for exchange order books and sportsbook odds, a de-vig model that
-              turns them into a consensus fair price, a passive quoting engine with
-              inventory and exposure limits, and a replay backtester that re-runs recorded
-              days against real settlements before changes go live. Deployed on AWS with
-              paper and shadow modes and a scorecard built around closing-line value.
-            </p>
-            <ul class="tag-list">
-              <li>Python</li><li>AWS EC2</li><li>REST + WebSockets</li><li>SQLite</li><li>Statistics</li>
+            <h3>Manhattan Athletic Group (MAG)</h3>
+            <p class="project-meta mono">Market Making · Proprietary Trading · Research</p>
+            <ul class="bullets">
+              <li>Details coming soon.</li>
             </ul>
             <div class="project-links">
               <a href="https://manhattanathleticgroup.com/" target="_blank" rel="noopener">manhattanathleticgroup.com ↗</a>
-              <span class="muted">Code private</span>
             </div>
           </div>
         </article>
@@ -266,15 +252,11 @@
             <div class="thumb-placeholder mono">arb</div>
           </div>
           <div class="project-body">
-            <h3>TRADERS @ CMU — Prediction Markets Team</h3>
-            <p>
-              Engineered an automated arbitrage bot that takes cross-platform
-              prediction-market positions in real time, pricing outcomes ahead of line
-              movement across NFL playoff markets. Also used Bayesian updating with volume
-              signals to fade public bias on mispriced Kalshi political contracts.
-            </p>
-            <ul class="tag-list">
-              <li>Python</li><li>Bayesian inference</li><li>Kalshi</li><li>Polymarket</li>
+            <h3>TRADERS @ CMU</h3>
+            <p class="project-meta mono">Prediction Markets Team · Jan 2026 – Present</p>
+            <ul class="bullets">
+              <li>Engineered an automated arbitrage bot executing cross-platform prediction-market positions in real time, generating 250% ROI and a 12/13 record across NFL playoff markets by pricing outcomes ahead of line movement</li>
+              <li>Used Bayesian updating with volume signals to fade public bias on mispriced Kalshi political contracts, capturing edge on probability dislocations</li>
             </ul>
           </div>
         </article>
@@ -285,16 +267,11 @@
             <div class="thumb-placeholder mono">imu → state</div>
           </div>
           <div class="project-body">
-            <h3>CMU HCI Lab — ML Research Intern</h3>
-            <p>
-              Built a smartwatch sensing pipeline that streams all-day accelerometer and
-              gyroscope data to classify hyperactivity states in children with ADHD in real
-              time, roughly doubling calm-moment detection precision over the baseline.
-              Showed that personalized models beat a single global model, supporting a
-              human-in-the-loop design for behavioral sensing.
-            </p>
-            <ul class="tag-list">
-              <li>Python</li><li>PyTorch</li><li>Time series</li><li>Wearables</li>
+            <h3>CMU — HCI Lab</h3>
+            <p class="project-meta mono">Machine Learning Research Intern · Pittsburgh, PA · Sep 2025 – May 2026</p>
+            <ul class="bullets">
+              <li>Built a smartwatch sensing pipeline streaming 8–10 hrs/day of IMU data to classify real-time hyperactivity states in children with ADHD, improving calm-moment detection precision from 40% to 80.6% across 9 families (+2× over baseline)</li>
+              <li>Showed personalized models (R² = .40) outperformed global models (R² = .23), supporting human-in-the-loop behavioral sensing design</li>
             </ul>
           </div>
         </article>
@@ -305,16 +282,11 @@
             <div class="thumb-placeholder mono">Σ risk</div>
           </div>
           <div class="project-body">
-            <h3>Morgan Stanley — Applied Quantitative Research</h3>
-            <p>
-              Summer on an analytics team: analyzed portfolio allocations, performance
-              trends, sector exposures, and risk metrics and turned them into client
-              presentations for senior advisors. Researched estate-planning and
-              wealth-transfer structures and ran valuation analysis on public companies to
-              inform investment recommendations.
-            </p>
-            <ul class="tag-list">
-              <li>Portfolio analytics</li><li>Valuation</li><li>Risk</li>
+            <h3>Morgan Stanley — Analytics Team</h3>
+            <p class="project-meta mono">Applied Quantitative Research · Sewickley, PA · May 2025 – Aug 2025</p>
+            <ul class="bullets">
+              <li>Analyzed $50M+ in portfolio allocations, performance trends, sector exposures, and risk metrics, translating complex data into actionable insights and client presentations for senior advisors</li>
+              <li>Researched estate planning, trust structures, and wealth-transfer strategies for UHNW families and applied valuation analysis to 15+ companies, directly informing advisor investment recommendations</li>
             </ul>
           </div>
         </article>
