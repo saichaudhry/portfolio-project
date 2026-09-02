@@ -72,4 +72,10 @@ accent color around the pointer. Implemented with two fixed layers positioned by
 variables (--mx, --my) that a mousemove listener updates; masked with a radial gradient.
 Touch devices are unaffected. Verified with a screenshot, committed, pushed.
 
+**Me:** can you do the photo thing again? ... added it to documents
+
+**Claude:** Found the screenshot in ~/Documents, resized it to a 1200px JPEG at
+assets/photo.jpg, and biased the square crop toward the face. Verified the hero
+with a screenshot, committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->

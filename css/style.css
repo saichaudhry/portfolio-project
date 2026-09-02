@@ -226,6 +226,7 @@ main, .site-footer { position: relative; z-index: 1; }
   aspect-ratio: 1;
   border-radius: var(--radius);
   object-fit: cover;
+  object-position: center 25%;   /* portrait photo in a square: keep the face, crop the torso */
   border: 1px solid var(--border);
   box-shadow: 0 0 0 6px var(--bg), 0 0 0 7px var(--border);
 }
