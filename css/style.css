@@ -211,6 +211,8 @@ main, .site-footer { position: relative; z-index: 1; }
   font-weight: 600;
   font-size: 0.95rem;
   border: 1px solid transparent;
+  background: transparent;   /* <button> elements otherwise get the browser's grey default */
+  font: inherit;             /* ...and the browser's default button font */
   cursor: pointer;
   transition: transform 0.15s ease, background-color 0.15s ease;
 }

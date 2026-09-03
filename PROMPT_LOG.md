@@ -163,4 +163,12 @@ morganstanley.com, and the Traders at CMU mark from tradersatcmu.com. All logos 
 same 130x90 box; white logos sit on dark panels, the black Morgan Stanley wordmark on a white
 panel. Added tradersatcmu.com and LinkedIn links to that entry. Footer credit updated. Committed, pushed.
 
+**Me:** can I make a URL for this to share it ... I did it now I think ... still not working, 404
+
+**Claude:** Pages was enabled but GitHub hadn't run the first build, so I pushed an empty
+commit to trigger it. Site went live at https://saichaudhry.github.io/portfolio-project/ and
+every asset returns 200. The live screenshot showed the "View resume" <button> rendering with
+the browser's default grey background, so I set background: transparent and font: inherit on
+.button. Committed, pushed.
+
 <!-- Keep appending sessions below. Copy-paste your prompts and the replies. -->
