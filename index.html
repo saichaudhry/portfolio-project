@@ -11,7 +11,8 @@
     The overall page skeleton below was drafted with Claude Code (Anthropic) from
     my written spec: dark technical theme, sections for intro / about / projects /
     contact, four JS features (theme toggle, scroll reveal, project filters,
-    contact-form validation). I chose the section order, the wording of every
+    contact-form validation), later joined by a resume overlay, custom cursor,
+    and a Cmd/Ctrl+K command palette. I chose the section order, the wording of every
     piece of text, which projects to show, and the tag names. See PROMPT_LOG.md
     at the repo root for the full conversation.
   -->
@@ -57,6 +58,16 @@
       </ul>
 
       <div class="nav-actions">
+        <!-- Command palette trigger. Keyboard users can also press Cmd+K (Mac) or
+             Ctrl+K; js/main.js fills in the right hint for the visitor's OS. -->
+        <button id="palette-toggle" class="palette-trigger" type="button" aria-label="Open command palette" aria-keyshortcuts="Meta+K Control+K">
+          <svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <kbd class="palette-hint mono" id="palette-hint" aria-hidden="true">⌘K</kbd>
+        </button>
+
         <!-- Theme toggle: JS in js/main.js swaps data-theme on <html> and saves the choice -->
         <button id="theme-toggle" class="icon-button" type="button" aria-label="Toggle dark or light mode">
           <!-- sun icon (shown in dark mode) -->
@@ -197,8 +208,8 @@
             <h3>Personal Portfolio Website</h3>
             <p>
               This site. Hand-written HTML, CSS, and vanilla JavaScript with a dark/light
-              theme, scroll-reveal animations, tag filtering, and a validated contact form.
-              Deployed on GitHub Pages. Built for 15-113 Project 1.
+              theme, scroll-reveal animations, tag filtering, a validated contact form,
+              and a ⌘K command palette. Deployed on GitHub Pages. Built for 15-113 Project 1.
             </p>
             <ul class="tag-list">
               <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
@@ -402,6 +413,34 @@
       </header>
       <!-- src is set by JS when opened, so the PDF isn't fetched until someone asks for it -->
       <iframe id="resume-frame" class="modal-frame" title="Sai Chaudhry resume" data-src="assets/Sai_Chaudhry_Resume.pdf#view=FitH"></iframe>
+    </div>
+  </div>
+
+  <!-- ============ COMMAND PALETTE ============ -->
+  <!-- Cmd+K / Ctrl+K (or the search button in the nav) opens a searchable list
+       of everything you can do on the page: jump to a section, toggle the theme,
+       view or download the resume, copy my email, open my links, filter the
+       projects. Type to fuzzy-filter, arrow keys to move, Enter to run, Esc to
+       close. The command list itself lives in js/main.js (setupCommandPalette)
+       and is rendered into #palette-list. -->
+  <div id="command-palette" class="palette" hidden>
+    <div class="modal-backdrop" data-close-palette></div>
+    <div class="palette-panel" role="dialog" aria-modal="true" aria-label="Command palette">
+      <div class="palette-search">
+        <span class="mono palette-prompt" aria-hidden="true">&gt;</span>
+        <input id="palette-input" type="text" class="palette-input mono" placeholder="Type a command or search..."
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+               role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" aria-activedescendant="">
+        <kbd class="palette-key mono" aria-hidden="true">esc</kbd>
+      </div>
+      <ul id="palette-list" class="palette-list" role="listbox" aria-label="Commands"></ul>
+      <p class="palette-empty mono" id="palette-empty" hidden>// no commands match</p>
+      <footer class="palette-footer mono">
+        <span><kbd>↑</kbd><kbd>↓</kbd> move</span>
+        <span><kbd>↵</kbd> run</span>
+        <span><kbd>esc</kbd> close</span>
+        <span class="palette-status" id="palette-status" role="status" aria-live="polite"></span>
+      </footer>
     </div>
   </div>
 

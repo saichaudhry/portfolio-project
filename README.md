@@ -12,10 +12,19 @@ Plain HTML, CSS, and JavaScript. No frameworks, no build step. Hosted on GitHub 
 ```
 index.html      page structure and content
 css/style.css   design tokens (dark + light themes), layout, components, responsive rules
-js/main.js      theme toggle, mobile nav, scroll reveal, project filter, contact-form validation
+js/main.js      theme toggle, mobile nav, scroll reveal, project filter, contact-form validation,
+                resume overlay, custom cursor, Cmd/Ctrl+K command palette
 assets/         images (photo and project screenshots go here)
 PROMPT_LOG.md   AI prompt log required by the course
 ```
+
+## Command palette
+
+Press **⌘K** (Mac) or **Ctrl+K**, or click the search pill in the nav, to open a
+fuzzy-searchable list of everything on the page: jump to a section, toggle the theme,
+view or download the resume, copy the email address, open GitHub / LinkedIn / employer
+sites, or filter the projects. Arrow keys move, Enter runs, Esc closes. Plain JS, no
+library; the command list is in `setupCommandPalette` in `js/main.js`.
 
 ## Run locally
 
