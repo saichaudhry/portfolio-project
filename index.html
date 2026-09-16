@@ -246,7 +246,7 @@
         <!-- Project 3: Gridiron Board (15-113 API assignment) -->
         <article class="project-card reveal reveal-delay-2" data-tags="web 15-113 trading">
           <div class="project-thumb">
-            <img src="assets/gridiron-board.png" alt="Gridiron Board: a dark market board listing NFL moneyline and spread prices in cents with YES and NO quotes">
+            <img src="assets/gridiron-board.png" alt="Gridiron Board: NFL matchups with team crests, a head-to-head moneyline box and ladders of spread prices quoted in cents">
           </div>
           <div class="project-body">
             <h3>Gridiron Board</h3>
@@ -254,7 +254,9 @@
               Kalshi lists pro football across 342 separate market series, which makes browsing it
               on the exchange impractical. This pulls all of it in one pass &mdash; 12,600+ open
               markets across every upcoming game &mdash; and regroups it by matchup, bet type,
-              period and player, so a quarterback's whole prop ladder sits on one card. A Python
+              period and player, so a quarterback's whole prop ladder sits on one card. Each bet
+              type is drawn in the shape that suits it: a head-to-head box for the moneyline,
+              per-side ladders for spreads and totals, a box per player for props. A Python
               fetcher walks the API and writes a JSON snapshot the static page renders; the browser
               never calls Kalshi, because the API returns 403 to any cross-origin request. No API
               key needed &mdash; the market-data endpoints are public. Built for 15-113.
