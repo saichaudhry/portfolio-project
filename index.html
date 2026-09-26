@@ -262,14 +262,19 @@
               because baseball teams play the same opponent on consecutive days. A Python fetcher
               walks both APIs hourly and writes JSON the static page renders; the browser calls
               neither directly, since Kalshi returns 403 to any cross-origin request. No API key
-              needed &mdash; both are public endpoints. Built for 15-113.
+              needed &mdash; both are public endpoints. <em>Ask the Board</em> adds a Flask backend on
+              Render: type a question like &ldquo;Who wins the Super Bowl?&rdquo; and it picks the
+              matching markets, re-prices them live from Kalshi, and has Claude explain what they
+              imply, with the API key kept server-side. Built for 15-113.
             </p>
             <ul class="tag-list">
-              <li>Python</li><li>REST API</li><li>JavaScript</li><li>SVG</li><li>GitHub Actions</li>
+              <li>Python</li><li>REST API</li><li>JavaScript</li><li>SVG</li><li>GitHub Actions</li><li>Flask</li><li>Render</li><li>Claude API</li>
             </ul>
             <div class="project-links">
               <a href="https://saichaudhry.github.io/kalshi-nfl-board/" target="_blank" rel="noopener">Open ↗</a>
+              <a href="https://saichaudhry.github.io/kalshi-nfl-board/ask.html" target="_blank" rel="noopener">Ask ↗</a>
               <a href="https://github.com/saichaudhry/kalshi-nfl-board" target="_blank" rel="noopener">Code ↗</a>
+              <a href="https://github.com/saichaudhry/gridiron-ask-backend" target="_blank" rel="noopener">Backend ↗</a>
             </div>
           </div>
         </article>
