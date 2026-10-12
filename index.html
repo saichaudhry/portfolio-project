@@ -193,23 +193,20 @@
         <button class="filter-button" data-filter="trading" type="button">Trading</button>
         <button class="filter-button" data-filter="work" type="button">Work</button>
         <button class="filter-button" data-filter="research" type="button">Research</button>
-        <button class="filter-button" data-filter="15-113" type="button">15-113</button>
       </div>
 
       <div class="project-grid" id="project-grid">
 
         <!-- Project 1: this site -->
-        <article class="project-card reveal" data-tags="web 15-113">
+        <article class="project-card reveal" data-tags="web">
           <div class="project-thumb">
-            <!-- Screenshot placeholder. Replace with <img src="assets/portfolio.png" alt="Screenshot of this portfolio site"> after deploying. -->
-            <div class="thumb-placeholder mono">index.html</div>
+            <img src="assets/portfolio.png" alt="This portfolio's landing page: name, tagline and headshot on a dark grid background">
           </div>
           <div class="project-body">
             <h3>Personal Portfolio Website</h3>
             <p>
-              This site. Hand-written HTML, CSS, and vanilla JavaScript with a dark/light
-              theme, scroll-reveal animations, tag filtering, a validated contact form,
-              and a ⌘K command palette. Deployed on GitHub Pages. Built for 15-113 Project 1.
+              This site. Hand-written HTML, CSS and vanilla JavaScript with a dark/light theme
+              and a ⌘K command palette.
             </p>
             <ul class="tag-list">
               <li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li>
@@ -220,18 +217,16 @@
           </div>
         </article>
 
-        <!-- Project 2: Night Crossing (15-113 Crossy Road assignment) -->
-        <article class="project-card reveal reveal-delay-1" data-tags="web 15-113">
+        <!-- Project 2: Night Crossing -->
+        <article class="project-card reveal reveal-delay-1" data-tags="web">
           <div class="project-thumb">
             <img src="assets/night-crossing.png" alt="Night Crossing gameplay: a voxel chicken about to cross a road of cars at dusk">
           </div>
           <div class="project-body">
             <h3>Night Crossing</h3>
             <p>
-              A Crossy Road-style browser game where distance is the clock: every run starts at
-              midday and the further you get, the darker it gets, until you're reading the road by
-              headlights. Three.js, procedural voxel art, synthesised audio, no build step. The game
-              logic is pure JavaScript with a Node test suite. Built for 15-113.
+              A Crossy Road-style game where distance is the clock: the further you get, the darker
+              it gets, until you're reading the road by headlights. Three.js and procedural voxel art.
             </p>
             <ul class="tag-list">
               <li>JavaScript</li><li>Three.js</li><li>WebGL</li><li>GitHub Pages</li>
@@ -243,29 +238,17 @@
           </div>
         </article>
 
-        <!-- Project 3: Gridiron Board (15-113 API assignment) -->
-        <article class="project-card reveal reveal-delay-2" data-tags="web 15-113 trading">
+        <!-- Project 3: Gridiron Board -->
+        <article class="project-card reveal reveal-delay-2" data-tags="web trading">
           <div class="project-thumb">
-            <img src="assets/gridiron-board.png" alt="Gridiron Board: a grid of NFL matchups with team crests, each showing both moneyline prices in cents plus the spread and total">
+            <img src="assets/gridiron-board.png" alt="Gridiron Board: league tabs above a grid of NFL matchups, each showing both moneyline prices in cents plus the spread and total">
           </div>
           <div class="project-body">
             <h3>Gridiron Board</h3>
             <p>
-              Kalshi lists sport across thousands of market series, which makes browsing it on the
-              exchange impractical. This walks ~1,100 of them across eight leagues &mdash; NFL,
-              college football, MLB, NBA, NHL, WNBA and both tennis tours &mdash; and regroups
-              roughly 50,000 open markets by matchup, bet type, period and player, so a
-              quarterback's whole prop ladder sits on one card. Each bet type is drawn in the shape
-              that suits it: a head-to-head box for the moneyline, a draggable number line for a
-              twenty-strike spread ladder, a box per player for props. ESPN's public API supplies
-              live scores and team crests, joined to Kalshi's fixtures on date as well as teams,
-              because baseball teams play the same opponent on consecutive days. A Python fetcher
-              walks both APIs hourly and writes JSON the static page renders; the browser calls
-              neither directly, since Kalshi returns 403 to any cross-origin request. No API key
-              needed &mdash; both are public endpoints. <em>Ask the Board</em> adds a Flask backend on
-              Render: type a question like &ldquo;Who wins the Super Bowl?&rdquo; and it picks the
-              matching markets, re-prices them live from Kalshi, and has Claude explain what they
-              imply, with the API key kept server-side. Built for 15-113.
+              Regroups ~50,000 Kalshi markets across eight leagues by matchup, bet type and player,
+              with live ESPN scores. <em>Ask the Board</em> lets you ask a question in plain English
+              and has Claude explain what the live prices imply.
             </p>
             <ul class="tag-list">
               <li>Python</li><li>REST API</li><li>JavaScript</li><li>SVG</li><li>GitHub Actions</li><li>Flask</li><li>Render</li><li>Claude API</li>
@@ -279,16 +262,16 @@
           </div>
         </article>
 
-        <!-- Project 4: The Sharp (15-113 Project 2) -->
-        <article class="project-card reveal" data-tags="web 15-113 trading">
+        <!-- Project 4: The Sharp -->
+        <article class="project-card reveal" data-tags="web trading">
           <div class="project-thumb">
-            <img src="assets/the-sharp.png" alt="The Sharp: a dark sports board of Kalshi game prices with a featured matchup chart, a docked bet slip, and four AI handicappers in a side panel">
+            <img src="assets/the-sharp.png" alt="The Sharp: the Pro Football board with a featured Falcons at Saints matchup, both live Kalshi prices and a price-history chart">
           </div>
           <div class="project-body">
             <h3>The Sharp</h3>
             <p>
               Play-money sports picks at live Kalshi prices. Four Claude-powered handicappers
-              remember your record and argue every game from ESPN stats. Built for 15-113 Project 2.
+              remember your record and argue every game from ESPN stats.
             </p>
             <ul class="tag-list">
               <li>React</li><li>Supabase</li><li>Claude API</li><li>Kalshi API</li>
@@ -394,28 +377,6 @@
           </div>
         </article>
 
-        <!-- Placeholders for future 15-113 projects -->
-        <article class="project-card project-card-soon reveal" data-tags="15-113">
-          <div class="project-thumb">
-            <div class="thumb-placeholder mono">coming soon</div>
-          </div>
-          <div class="project-body">
-            <h3>15-113 Project 2</h3>
-            <p>Coming later this semester.</p>
-            <ul class="tag-list"><li>TBD</li></ul>
-          </div>
-        </article>
-
-        <article class="project-card project-card-soon reveal reveal-delay-1" data-tags="15-113">
-          <div class="project-thumb">
-            <div class="thumb-placeholder mono">coming soon</div>
-          </div>
-          <div class="project-body">
-            <h3>15-113 Project 3</h3>
-            <p>Coming later this semester.</p>
-            <ul class="tag-list"><li>TBD</li></ul>
-          </div>
-        </article>
 
       </div>
 

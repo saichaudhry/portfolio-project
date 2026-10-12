@@ -319,8 +319,10 @@ main, .site-footer { position: relative; z-index: 1; }
 .project-card-soon { opacity: 0.6; }
 .project-card-soon:hover { transform: none; border-color: var(--border); }
 
-.project-thumb { aspect-ratio: 16 / 9; background: var(--bg-elev-2); }
-.project-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.project-thumb { aspect-ratio: 16 / 9; background: var(--bg-elev-2); overflow: hidden; }
+/* Screenshots anchor to the top so an app's header, not its middle, survives the crop */
+.project-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.4s ease; }
+.project-card:hover .project-thumb img:not(.logo) { transform: scale(1.04); }
 .thumb-placeholder {
   width: 100%; height: 100%;
   display: grid; place-items: center;
@@ -726,7 +728,8 @@ body.modal-open { overflow: hidden; }   /* stop the page scrolling behind the ov
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .project-card, .button { transition: none; }
+  .project-card, .button, .project-thumb img { transition: none; }
+  .project-card:hover .project-thumb img:not(.logo) { transform: none; }
   .modal-panel, .palette-panel { animation: none; }
 }
 

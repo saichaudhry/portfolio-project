@@ -338,8 +338,7 @@ function setupCommandPalette() {
     { group: "filter projects", icon: "filter", label: "Filter: Web",       keywords: "filter tag",   detail: "web",      run: () => filterProjects("web") },
     { group: "filter projects", icon: "filter", label: "Filter: Trading",   keywords: "filter tag markets", detail: "trading", run: () => filterProjects("trading") },
     { group: "filter projects", icon: "filter", label: "Filter: Work",      keywords: "filter tag jobs", detail: "work",  run: () => filterProjects("work") },
-    { group: "filter projects", icon: "filter", label: "Filter: Research",  keywords: "filter tag",   detail: "research", run: () => filterProjects("research") },
-    { group: "filter projects", icon: "filter", label: "Filter: 15-113",    keywords: "filter tag course cmu class", detail: "15-113", run: () => filterProjects("15-113") }
+    { group: "filter projects", icon: "filter", label: "Filter: Research",  keywords: "filter tag",   detail: "research", run: () => filterProjects("research") }
   ];
 
   function copyEmail() {
